@@ -1,8 +1,8 @@
-# Install script for directory: D:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls/mbedtls
+# Install script for directory: D:/Espressifv4/frameworks/esp-idf-v4.4.5/components/mbedtls/mbedtls
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/hello_world")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/DesktopMiniScreen")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,14 +34,14 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/Espressifv4/tools/xtensa-esp32-elf/esp-2021r2-patch5-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/Espressif/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("D:/Espressif/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("D:/Espressif/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("D:/Espressifv4/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("D:/Espressifv4/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("D:/Espressifv4/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
 
 endif()
 

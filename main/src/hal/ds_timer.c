@@ -16,8 +16,6 @@
 
 #include "ds_timer.h"
 
-#define TIMER_BASE_CLK 80000000
-
 #define TIMER_DIVIDER         16  //  Hardware timer clock divider
 #define TIMER_SCALE           (TIMER_BASE_CLK / TIMER_DIVIDER/1000)  // convert counter value to ms seconds
 #define TIMER_INTERVAL0_SEC   (10) // sample test interval for the first timer
@@ -34,7 +32,7 @@ typedef struct {
 
 timer_event_t g_timer_event;
 
-QueueHandle_t timer_queue;
+xQueueHandle timer_queue;
 
 /*
  * Timer group0 ISR handler
