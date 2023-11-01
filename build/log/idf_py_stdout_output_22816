@@ -1,0 +1,64 @@
+[0;32mI (13) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time Nov  1 2023 14:26:59[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (17) boot: chip revision: v3.1[0m
+[0;32mI (21) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (26) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (30) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (35) boot: Enabling RNG early entropy source...[0m
+[0;32mI (40) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (51) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (73) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09278h ( 37496) map[0m
+[0;32mI (100) esp_image: segment 1: paddr=000192a0 vaddr=3ffb0000 size=020f0h (  8432) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001b398 vaddr=40080000 size=04c80h ( 19584) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=13900h ( 80128) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00033928 vaddr=40084c80 size=07398h ( 29592) load[0m
+[0;32mI (161) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (162) boot: Disabling RNG early entropy source...[0m
+[0;32mI (173) cpu_start: Multicore app[0m
+[0;32mI (173) cpu_start: Pro cpu up.[0m
+[0;32mI (173) cpu_start: Starting app cpu, entry point is 0x400810e8[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) cpu_start: Application information:[0m
+[0;32mI (196) cpu_start: Project name:     hello_world[0m
+[0;32mI (201) cpu_start: App version:      9f36e2c-dirty[0m
+[0;32mI (207) cpu_start: Compile time:     Nov  1 2023 14:26:44[0m
+[0;32mI (213) cpu_start: ELF file SHA256:  e31faba14c8c2cd3...[0m
+[0;32mI (219) cpu_start: ESP-IDF:          v5.1.1-dirty[0m
+[0;32mI (224) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (229) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (234) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (239) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFB2958 len 0002D6A8 (181 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (264) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (271) heap_init: At 4008C018 len 00013FE8 (79 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;33mW (286) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (299) app_start: Starting scheduler on CPU0[0m
+[0;32mI (304) app_start: Starting scheduler on CPU1[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (314) main_task: Calling app_main()[0m
+Hello world!
+This is esp32 chip with 2 CPU core(s), WiFi/BTBLE, silicon revision v3.1, [0;32mI (314) MAIN APP: system init V1.1[0m
+system run....
+task
+system run....
+task
+system run....
+task
+system run....
+task
+system run....
+task
+system run....
+task
+system run....

@@ -13,7 +13,16 @@
 #include "esp_flash.h"
 #include "esp_log.h"
 
-static const char *TAG = "MAIN APP";
+static const char *TAG = "MAIN APP"; 
+
+
+//Creating Task
+static void test_task_exmaple(void* arg){
+    for(;;){
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        printf("task\n");
+    }
+}
 
 void app_main(void)
 {
@@ -41,16 +50,13 @@ void app_main(void)
 
     ESP_LOGI(TAG, "system init V1.1");
 
-    printf("%" PRIu32 "MB %s flash\n", flash_size / (uint32_t)(1024 * 1024),
-           (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+    ds_timer_init();
+    xTaskCreate(test_task_exmaple, "test_task_example", 2048,NULL,10, NULL);
 
-    printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
-    for (int i = 10; i >= 0; i--) {
-        printf("Restarting in %d seconds...\n", i);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+
+    while(1){
+        printf("system run....\n");
+        vTaskDelay(1000/ portTICK_PERIOD_MS);
     }
-    printf("Restarting now.\n");
-    fflush(stdout);
-    esp_restart();
 }

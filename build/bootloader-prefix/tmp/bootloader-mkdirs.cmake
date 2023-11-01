@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "D:/Espressif/frameworks/esp-idf-v5.1.1/components/bootloader/subproject"
-  "D:/Espressif/frameworks/hello_world/build/bootloader"
-  "D:/Espressif/frameworks/hello_world/build/bootloader-prefix"
-  "D:/Espressif/frameworks/hello_world/build/bootloader-prefix/tmp"
-  "D:/Espressif/frameworks/hello_world/build/bootloader-prefix/src/bootloader-stamp"
-  "D:/Espressif/frameworks/hello_world/build/bootloader-prefix/src"
-  "D:/Espressif/frameworks/hello_world/build/bootloader-prefix/src/bootloader-stamp"
+  "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader"
+  "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix"
+  "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/tmp"
+  "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp"
+  "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src"
+  "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/Espressif/frameworks/hello_world/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "D:/Espressif/frameworks/hello_world/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "D:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()
