@@ -8,4 +8,6 @@ idf_component_register(SRCS
                             "."
                             "./include"
                             "./include/hal"
-                            "./include/fs")
+                            "./include/fs"
+                    REQUIRES 
+                        "esp32" "12c")
