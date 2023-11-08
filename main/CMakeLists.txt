@@ -1,17 +1,19 @@
+
 idf_component_register(SRCS 
                             "main.c"
+
+                            "src/ds_system_data.c"
+
                             "src/hal/ds_timer.c"
                             "src/hal/ds_nvs.c"
                             "src/hal/ds_gpio.c"
                             "src/hal/ds_i2c.c"
 
-
-                            "src/ds_system_data.c"
                             "src/fs/ds_spiffs.c"
 
                             "src/driver/ds_ft6336.c"
-
-                    INCLUDE_DIRS 
+                    
+                       INCLUDE_DIRS 
                             "."
                             "./include"
                             "./include/hal"

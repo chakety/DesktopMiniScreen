@@ -75,6 +75,7 @@ void app_main(void)
 
     while(1){
         printf("system run ...\n");
+        get_ft6336_touch_sta(&position);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }

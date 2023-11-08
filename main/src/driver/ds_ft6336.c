@@ -51,7 +51,7 @@ static void scan_ft6336(){
 //Physical Loaction Convertion
 static void count_position_ft6336(TP_POSITION_T *position){
 	switch(gTPS.touch_count){
-		case1:
+		case 1:
 			if((gTPS.x[0] != 0)&&(gTPS.y[0] != 0)
 			&&(gTPS.x[0] < 200) && (gTPS.y[0]<200)){//invalide action
 				//To 152x152 - Screen Size
@@ -66,7 +66,7 @@ static void count_position_ft6336(TP_POSITION_T *position){
 				return;
 			}
 			break;
-		case2:
+		case 2:
 			if((gTPS.x[0] != 0)&&(gTPS.y[0] != 0)
 			&&(gTPS.x[0] < 200) && (gTPS.y[0]<200)
 			&&(gTPS.x[1] != 0)&&(gTPS.y[1] != 0)

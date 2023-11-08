@@ -16,40 +16,40 @@
  */
 
 
-#define GPIO_OUTOUT_IO_0 5
-#define GPIO_OUTPUT_PIN_SEL ((1ULL << GPIO_OUTPUT_IO_0))
-#define GPIO_INPUT_IO_0 4
-#define GPIO_INPUT_PIN_SEL ((1ULL << GPIO_INPUT_IO_0))
+#define GPIO_OUTPUT_IO_0    5
+#define GPIO_OUTPUT_PIN_SEL  ((1ULL<<GPIO_OUTPUT_IO_0))
+#define GPIO_INPUT_IO_0     4
+#define GPIO_INPUT_PIN_SEL  ((1ULL<<GPIO_INPUT_IO_0))
 #define ESP_INTR_FLAG_DEFAULT 0
 
 //Screen 0-valid
 #define SCREEN_GPIO_OUTPUT_CS 27
-#define SCREEN_GPIO_OUTPUT_CS_SEL ((1ULL << SCREEN_GPIO_OUTPUT_CS))
+#define SCREEN_GPIO_OUTPUT_CS_SEL ((1ULL<<SCREEN_GPIO_OUTPUT_CS))
 
 //Screen Data 1-data 0-cmd
 #define SCREEN_GPIO_OUTPUT_DC 14
-#define SCREEN_GPIO_OUTPUT_DC_SEL ((1ULL << SCREEN_GPIO_OUTPUT_DC))
+#define SCREEN_GPIO_OUTPUT_DC_SEL ((1ULL<<SCREEN_GPIO_OUTPUT_DC))
 
 //Screen rest
 #define SCREEN_GPIO_OUTPUT_RES 12
-#define SCREEN_GPIO_OUTPUT_RES_SEL ((1ULL << SCREEN_GPIO_OUTPUT_RES))
+#define SCREEN_GPIO_OUTPUT_RES_SEL ((1ULL<<SCREEN_GPIO_OUTPUT_RES))
 
 //Screen busy
 #define SCREEN_GPIO_INTPUT_BUSY 13
-#define SCREEN_GPIO_INTPUT_BUSY_SEL ((1ULL << SCREEN_GPIO_INTPUT_BUSY))
+#define SCREEN_GPIO_INTPUT_BUSY_SEL ((1ULL<<SCREEN_GPIO_INTPUT_BUSY))
 
 static xQueueHandle gpio_evt_queue = NULL;
 
-static void IRAM_ATTR gpio_irs_handler(void* arg){
+static void IRAM_ATTR gpio_isr_handler(void* arg){
     uint32_t gpio_num = (uint32_t) arg;
-    xQueueSendFormISR(gpio_evt_queue, &gpio_num, NULL);
+    xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
 }
 
 static void gpio_task_example(void *arg){
     uint32_t io_num;
     for(;;){
         if(xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)){
-            printf("GPIO[%d] intr, val:%d\n", io-num,gpio_get_level(io_num));
+            printf("GPIO[%d] intr, val:%d\n", io_num,gpio_get_level(io_num));
         }
     }
 }
@@ -59,9 +59,9 @@ void ds_touch_gpio_init(){
     //disable interrupt
     io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
     //set as output mode
-    io.conf.mode = GPIO_MODE_OUTPUT;
+    io_conf.mode = GPIO_MODE_OUTPUT;
     //bit mask of the pins that you want to set, e.g.GPIO18/19
-    io_conf.pint_bit_mask = GPIO_OUTPUT_PIN_SEL;
+    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
     //disable pull-down mode
     io_conf.pull_down_en = 0;
     //disanle pull-up mode
@@ -77,7 +77,7 @@ void ds_touch_gpio_init(){
     //install
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     //hook isr handler for specific gpio pin
-    gpio_isr_handler_add(GPIO_INPUT_IO_0, gpio_isr_handler,(viod*)GPIO_INPUT_IO_0);
+    gpio_isr_handler_add(GPIO_INPUT_IO_0, gpio_isr_handler,(void*)GPIO_INPUT_IO_0);
 
 }
 
@@ -86,9 +86,9 @@ void ds_screen_gpio_init(){
     //disable interrupt
     io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
     //set as output mode
-    io.conf.mode = GPIO_MODE_OUTPUT;
+    io_conf.mode = GPIO_MODE_OUTPUT;
     //bit mask of the pins that you want to set, e.g.GPIO18/19
-    io_conf.pint_bit_mask = GPIO_OUTPUT_PIN_SEL;
+    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
     //disable pull-down mode
     io_conf.pull_down_en = 0;
     //disanle pull-up mode
@@ -107,7 +107,7 @@ void ds_screen_gpio_init(){
     gpio_config(&io_conf);
 
 
-    io_config.intr_type = GPIO_INTR_NEGEDGE;
+    io_conf.intr_type = GPIO_INTR_NEGEDGE;
     //bit mask of the pins, use GPIO4/5 here
     io_conf.pin_bit_mask = SCREEN_GPIO_INTPUT_BUSY_SEL;
     //set as input mode 
@@ -139,7 +139,7 @@ void ds_gpio_set_screen_rst(uint32_t level){
 }
 
 int ds_gpio_get_screen_busy(){
-    return gpio_get_level(SCREEN_GPIO_INTPUT_BUSY)
+    return gpio_get_level(SCREEN_GPIO_INTPUT_BUSY);
 }
 
 void ds_gpio_set_touch_rst(uint32_t level){
