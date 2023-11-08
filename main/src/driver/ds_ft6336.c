@@ -125,7 +125,7 @@ void init_ft6336(){
 	//touch sensitive level
 	i2c_master_write_slave(FT_ID_G_THGROUP, &w_data,1);
 	i2c_master_read_slave(FT_ID_G_THGROUP,&r_data,1);
-	prinf("Initi THROUP = %d \n", r_data);
+	printf("Initi THROUP = %d \n", r_data);
 	w_data = 14;
 	//Setting Active Periodic between 12 and 14
 	i2c_master_write_slave(FT_ID_G_PERIODACTIVE,&w_data,1); 
