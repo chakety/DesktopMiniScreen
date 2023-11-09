@@ -87,46 +87,47 @@ void ds_screen_gpio_init(){
     io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
     //set as output mode
     io_conf.mode = GPIO_MODE_OUTPUT;
-    //bit mask of the pins that you want to set, e.g.GPIO18/19
-    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
+    //bit mask of the pins that you want to set,e.g.GPIO18/19
+    io_conf.pin_bit_mask = SCREEN_GPIO_OUTPUT_CS_SEL;
     //disable pull-down mode
     io_conf.pull_down_en = 0;
-    //disanle pull-up mode
+    //disable pull-up mode
     io_conf.pull_up_en = 0;
-    //configure GPIO with given settings
+    //configure GPIO with the given settings
     gpio_config(&io_conf);
 
-    //bit mask of the pins that you want to set, e.GPIO18/19
+    //bit mask of the pins that you want to set,e.g.GPIO18/19
     io_conf.pin_bit_mask = SCREEN_GPIO_OUTPUT_DC_SEL;
     //configure GPIO with the given settings
     gpio_config(&io_conf);
 
-    //bit mask of the pins that you want to set, e.GPIO18/19
+    //bit mask of the pins that you want to set,e.g.GPIO18/19
     io_conf.pin_bit_mask = SCREEN_GPIO_OUTPUT_RES_SEL;
     //configure GPIO with the given settings
     gpio_config(&io_conf);
 
-
     io_conf.intr_type = GPIO_INTR_NEGEDGE;
     //bit mask of the pins, use GPIO4/5 here
     io_conf.pin_bit_mask = SCREEN_GPIO_INTPUT_BUSY_SEL;
-    //set as input mode 
+    //set as input mode    
     io_conf.mode = GPIO_MODE_INPUT;
-    //enable pull-up mdoe
-    io_conf.pull_up_en =0;
+    //enable pull-up mode
+    io_conf.pull_up_en = 0;
     gpio_config(&io_conf);
-    
+    //change gpio intrrupt type for one pin
+    // gpio_set_intr_type(SCREEN_GPIO_INTPUT_BUSY, GPIO_INTR_NEGEDGE);
+
     //install gpio isr service
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
-    //hook isr handler for specific gpio pin 
-    gpio_isr_handler_add(SCREEN_GPIO_INTPUT_BUSY, gpio_isr_handler,(void*)SCREEN_GPIO_INTPUT_BUSY);
+    //hook isr handler for specific gpio pin
+    gpio_isr_handler_add(SCREEN_GPIO_INTPUT_BUSY, gpio_isr_handler, (void*) SCREEN_GPIO_INTPUT_BUSY);
 }
 
 void ds_gpio_init(){
     ds_touch_gpio_init();
 }
 
-void ds_gpio_set_scrren_cs(uint32_t level){
+void ds_gpio_set_screen_cs(uint32_t level){
     gpio_set_level(SCREEN_GPIO_OUTPUT_CS, level);
 }
 

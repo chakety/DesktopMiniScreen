@@ -4,16 +4,16 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "D:/Espressifv4.2/frameworks/esp-idf-v4.4.2/components/bootloader/subproject"
-  "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader"
-  "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader-prefix"
-  "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader-prefix/tmp"
-  "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp"
-  "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader-prefix/src"
-  "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Espressif/frameworks/esp-idf-v4.4.2/components/bootloader/subproject"
+  "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader"
+  "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix"
+  "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/tmp"
+  "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src"
+  "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Espressif/frameworks/DesktopMiniScreen/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
