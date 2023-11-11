@@ -1,4 +1,4 @@
-/* * Data converted from C:/Espressif/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from D:/Espressifv4.2/frameworks/DesktopMiniScreen/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded
