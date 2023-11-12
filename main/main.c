@@ -22,6 +22,8 @@
 #include "ds_ft6336.h"
 #include "ds_screen.h"
 
+#include "ds_wifi_ap.h"
+
 #define CHIP_NAME "ESP32"
 
 static const char *TAG = "MAIN APP";
@@ -69,9 +71,7 @@ void app_main(void)
     ds_nvs_save_wifi_info();
     ds_nvs_read_wifi_info();
 
-    init_ft6336();
-    init_screen_interface();
-    ds_screen_init();
+    ds_wifi_ap_start();
 
     xTaskCreate(test_task_example, "test_task_example", 2048, NULL, 10, NULL);
 

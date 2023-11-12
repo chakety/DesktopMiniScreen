@@ -2096,6 +2096,57 @@
                 "id": "desktopscreen-configuration-i2c-master",
                 "title": "I2C Master",
                 "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "SSID (network name) for the example to connect to.",
+                        "id": "ESP_AP_WIFI_SSID",
+                        "name": "ESP_AP_WIFI_SSID",
+                        "range": null,
+                        "title": "WiFi SSID",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "WiFi password (WPA or WPA2) for the example to use.",
+                        "id": "ESP_AP_WIFI_PASSWORD",
+                        "name": "ESP_AP_WIFI_PASSWORD",
+                        "range": null,
+                        "title": "WiFi Password",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "WiFi channel (network channel) for the example to use.",
+                        "id": "ESP_AP_WIFI_CHANNEL",
+                        "name": "ESP_AP_WIFI_CHANNEL",
+                        "range": [
+                            1,
+                            13
+                        ],
+                        "title": "WiFi Channel",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Max number of the STA connects to AP.",
+                        "id": "ESP_AP_MAX_STA_CONN",
+                        "name": "ESP_AP_MAX_STA_CONN",
+                        "range": null,
+                        "title": "Maximal STA connections",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "desktopscreen-configuration-wifi-ap",
+                "title": "Wifi AP",
+                "type": "menu"
             }
         ],
         "depends_on": null,
