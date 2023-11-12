@@ -48,8 +48,8 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
 
 void wifi_init_softap(void)
 {
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    // ESP_ERROR_CHECK(esp_netif_init());
+    // ESP_ERROR_CHECK(esp_event_loop_create_default());
     esp_netif_create_default_wifi_ap();
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -79,7 +79,8 @@ void wifi_init_softap(void)
              EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS, EXAMPLE_ESP_WIFI_CHANNEL);
 }
 
-void ds_wifi_ap_start(){
+void ds_wifi_ap_start(void)
+{
     if(start_status == 0){
         start_status = 1;
         ESP_LOGI(TAG, "ESP_WIFI_MODE_AP");
@@ -99,3 +100,4 @@ void ds_wifi_ap_stop(){
         ESP_LOGI(TAG, "ESP_WIFI_MODE_AP IS STOPING");
     }
 }
+

@@ -18,6 +18,8 @@ idf_component_register(SRCS
 
                             
                             "src/net/ds_wifi_ap.c"
+                            "src/net/ds_http_server.c"
+
                     
                        INCLUDE_DIRS 
                             "."
@@ -27,4 +29,7 @@ idf_component_register(SRCS
                             "./include/driver"
                             "./include/data"
                             "./include/net"
+                         EMBED_FILES 
+                              "./html/favicon.ico"
+                              "./html/setting.html"
                             )
