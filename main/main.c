@@ -77,6 +77,6 @@ void app_main(void)
 
     while(1){
         printf("system run ...\n");
-        vTaskDelay(2000 / portTICK_PERIOD_MS);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
