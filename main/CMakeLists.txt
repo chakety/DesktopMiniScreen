@@ -21,6 +21,7 @@ idf_component_register(SRCS
                             "src/net/ds_http_server.c"
                             "src/net/ds_wifi_sta.c"
                             "src/net/ds_wifi_scan.c"
+                            "src/net/ds_http_request.c"
 
                     
                        INCLUDE_DIRS 

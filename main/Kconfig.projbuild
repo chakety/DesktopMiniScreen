@@ -77,7 +77,7 @@ menu "DesktopScreen Configuration"
                 Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
     endmenu
 
-# wifi scan
+# wifi scan             
     menu "Wifi Scan"
         config EXAMPLE_SCAN_LIST_SIZE
             int "Max size of scan list"
