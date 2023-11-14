@@ -285,6 +285,8 @@
     "ETH_USE_ESP32_EMAC": true,
     "ETH_USE_OPENETH": false,
     "ETH_USE_SPI_ETHERNET": true,
+    "EXAMPLE_DS_TEST": 10,
+    "EXAMPLE_SCAN_LIST_SIZE": 10,
     "FATFS_CODEPAGE": 437,
     "FATFS_CODEPAGE_437": true,
     "FATFS_CODEPAGE_720": false,

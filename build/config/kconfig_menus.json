@@ -2185,6 +2185,40 @@
                 "id": "desktopscreen-configuration-wifi-sta",
                 "title": "Wifi STA",
                 "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "The size of array that will be used to retrieve the list of access points.",
+                        "id": "EXAMPLE_SCAN_LIST_SIZE",
+                        "name": "EXAMPLE_SCAN_LIST_SIZE",
+                        "range": [
+                            0,
+                            20
+                        ],
+                        "title": "Max size of scan list",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Desktop Screen test in Kconfig.",
+                        "id": "EXAMPLE_DS_TEST",
+                        "name": "EXAMPLE_DS_TEST",
+                        "range": [
+                            0,
+                            20
+                        ],
+                        "title": "Desktop Screen test list",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "desktopscreen-configuration-wifi-scan",
+                "title": "Wifi Scan",
+                "type": "menu"
             }
         ],
         "depends_on": null,
