@@ -217,7 +217,7 @@ void http_time_get(){
 void http_weather_get(){
     esp_http_client_config_t config = {
         .method = HTTP_METHOD_GET,
-        .url = "http://api.weatherapi.com/v1/current.json?key=c8b2488b50e84bcfbf5161013231411&q=Boston&aqi=no",
+        .url = "",
         .event_handler =  _http_weather_event_handle,
         .skip_cert_common_name_check = true,
     };
