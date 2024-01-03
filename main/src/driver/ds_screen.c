@@ -335,6 +335,6 @@ void ds_screen_clean_white(){
 
 //Initialization
 void ds_screen_init(){
-	ds_screen_full_display_data(lut_ww1);														//EPD_sleep
+	ds_screen_display_white();														//EPD_sleep
 }
 
